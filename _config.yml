@@ -24,7 +24,8 @@ website: https://lab42.global
 description: >- # this means to ignore newlines until "baseurl:"
   Awesome description of SIC. Missing!!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: lab42-global.github.io
+baseurl: /sic42-doc
 linkedin_username: lab42-global
 github_username:  lab42-global
 
