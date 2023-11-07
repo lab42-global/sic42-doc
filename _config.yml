@@ -19,7 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 title: SIC Documentation
-email: your-email@example.com
+email: swarm@lab42.global
+website: https://lab42.global
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -31,6 +32,11 @@ github_username:  jekyll
 
 # Build settings
 theme: minima
+
+minima:
+  skin: solarized-dark
+  date_format: "%b %-d, %Y"
+
 plugins:
   - jekyll-feed
 
