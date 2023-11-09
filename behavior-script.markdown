@@ -81,4 +81,4 @@ You have an interesting behavior to show, or just want to see how your agents st
 
 1. [Sign Up](https://lab42.global/sic-registration/)
 2. [Submit your Code](https://lab42.global/sic-submission/)
-3. Get to the top of the [Leaderboard]((https://lab42.global/sic-leaderboard/))
+3. Get to the top of the [Leaderboard](https://lab42.global/sic-leaderboard/)
