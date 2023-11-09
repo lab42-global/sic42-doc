@@ -14,4 +14,4 @@ To get started with the sic42 package head over to our [quick start](/quick-star
 
 ## About the Swarm Intelligence Cup
 
-Rolf? ;)
+Why should we care? How can it help us for AI? What's the intent?... Rolf? ;)
