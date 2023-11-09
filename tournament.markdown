@@ -10,8 +10,8 @@ To evaluate the contributions of the participants against each other we will hol
 
 A tournament is divided into two stages
 
-1. Rounds
-2. Sets
+1. [Rounds](#1-rounds)
+2. [Sets](#2-sets)
 
 ### 1. Rounds
 

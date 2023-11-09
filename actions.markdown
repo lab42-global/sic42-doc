@@ -6,7 +6,16 @@ permalink: /actions/
 
 Actions are what describe your agent behavior and you will let your Python script specify them based on the input the agent receives. Let the absolute position of the agent be given by \[x, y\]. We group the actions loosely by their type:
 
-### Basic Survival Actions
+1. [Basic Survival](#1-basic-survival)
+2. [Item Interaction](#2-item-interaction)
+3. [Information Handling](#3-information-handling)
+4. [Environmental Interaction](#4-environmental-interaction)
+5. [Enhancement](#5-enhancement)
+
+They can be [combined](#6-combining-actions) to lists of actions that an agent desires to execute. However, note that the number of actions an agent can take in a single time step is limited by the number of available activity points to
+the agent.
+
+### 1. Basic Survival
 
 - **step:** Make an agent step from one cell to another.  
 
@@ -48,7 +57,7 @@ The value of the action is the relative location of the cell the offspring shoul
 
 will create an offspring of the agent at the location \[x-3, y+4\].
 
-### Item Interaction Actions
+### 2. Item Interaction
 
 - **pickup:** Pick up an item and put it into storage.
 
@@ -80,7 +89,7 @@ The value of the action is the relative position of the location of the item whi
 
 will make the agent merge the item in storage with the one at \[x-2, y+3\]. The newly created item will be stored in the inventory.
 
-### Information Handling Actions
+### 3. Information Handling
 
 - **infostorage:**: Write information into item.
 
@@ -112,7 +121,7 @@ The value of the action is a list of pairs \[relative position, message\], where
 
 will broadcast the message "above you" to the agent at \[x+1, y\] and the message "below you" to the agent at \[x-1, y\].
 
-### Environmental Interaction Actions
+### 4. Environmental Interaction
 
 - **pheromone:** Place pheromones on the cells.
 
@@ -124,7 +133,7 @@ The value of the action consists of the relative position of the cell the pherom
 
 will place the pheromone 1 on the cell \[0, 0\].
 
-### Enhancement Actions
+### 5. Enhancement
 
 - **powerup:** Consume powerup from item.
 
@@ -146,7 +155,7 @@ The value of the action is the relative position of the item from which the upgr
 
 will let the agent consume the powerup in the item located at \[x+1, y+1\] (if there is one). Note that upgrades are permanent and will be passed to offsprings via reproduction.
 
-## Combining actions
+## 6. Combining actions
 
 If allowed in a game, all of the above actions can be combined for a single step. Say the number of available activity points is 2, then the simulation will execute the first 2 requested actions in the list returned by the agent. E.g., if the number of activity points is 2 and the list returned by the agent is the following:
 
