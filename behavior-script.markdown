@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Behavior Script
-permalink: /behavior script/
+permalink: /behavior-script/
 ---
 
 You successfully installed the sic42 package using our [quick start](/quick-start/) guide and now want to implement your own behavior? Just follow these main steps:
