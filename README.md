@@ -45,10 +45,10 @@ To build the documentation on your local machine, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/lab42-global/sic42-docs.git
+git clone https://github.com/lab42-global/sic42-doc.git
 
 # Navigate to the docs directory
-cd sic42-docs
+cd sic42-doc
 
 # Build the documentation
 bundle exec jekyll serve
