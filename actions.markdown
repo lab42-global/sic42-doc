@@ -89,6 +89,9 @@ The value of the action is the relative position of the location of the item whi
 
 will make the agent merge the item in storage with the item in the inventory of the agent at \[x-2, y+3\]. The newly created item will be stored in the inventory.
 
+Every time two types of items are merged for the first time their attributes will be randomly assigned with a bias to make them more useful. If two types of items have already
+been merged they will receive the attributes assigned when they were first merged.
+
 ### 3. Information Handling
 
 - **infostorage:** Write information into item.
