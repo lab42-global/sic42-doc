@@ -6,7 +6,7 @@ layout: home
 title: Welcome to the sic42 Documentation!
 ---
 
-This is the documentation for the sic42 package. It is a work in progress and will be expanded as the beta phase runs. You can help us improve it by submitting pull requests on our [GitHub repository](https://github.com/michaelhodel/sic "SIC Documentation").
+This is the documentation for the sic42 package. It is a work in progress and will be expanded as the beta phase runs. You can help us improve it by submitting pull requests on our [GitHub repository](https://github.com/lab42-global/sic42-doc).
 
 ## How to get started
 

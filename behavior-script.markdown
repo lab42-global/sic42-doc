@@ -17,15 +17,14 @@ Create a new Python file as the base for your new agent behavior script. If you 
 
 ## 2. Add a `main()` function and code a behavior
 
-Everything your file needs is a working `main()` function. It will be imported when running the simulation. At each time step of the simulation it can read the 'agent_input.json' and should create an 'agent_output.json' file containing the
-actions your agents should take based on the content of the input file. For more information on the simulation and the input/output files head over to our [simulation](/simulation/) section. 
+Everything your file needs is a working `main()` function. It will be imported when running the simulation. At each time step of the simulation it can read the 'agent_input.json' and can create an 'agent_output.json' file containing the
+actions your agents may take based on the content of the input file. For more information on the simulation and the input/output files head over to our [simulation](/simulation/) section.
 
 A minimal example of an agent that just moves right independent of the input would be:
 
 ```python
 import json
 import sys
-sys.path.append('...')
 
 def from_json(path='agent_input.json'):
     with open(path, 'r') as fp:
@@ -49,8 +48,8 @@ def main():
         json.dump(desired_actions, fp)
 ```
 
-Note that we defined a function called `from_json` to read the agents input. However, we are not using it in this simple behavior we just create a list called `desired_actions` and append an action with key `step` and value `[0, 1]` to it.
-This will make the agent move right (if possible) as we write the `desired_actions` list to the `agent_output.json` file. This file will be read by the simulation handler and checked if the action can be executed as well as if there your
+Note that we defined a function called `from_json` to read the agents input. However, we are not using its output in this simple behavior we just create a list called `desired_actions` and append an action with key `step` and value `[0, 1]` to it.
+This will make the agent move right (if possible) as we write the `desired_actions` list to the `agent_output.json` file. This file will be read by the simulation handler and checked if the action can be executed as well as if your
 agent still has enough activity points. You can read more about what an agent can do in our [actions](/actions/) section.
 
 If you wish to use Python packages you can use most of the commonly available. For the beta phase we will run the tournaments using the official Kaggle docker-python image which means that you can use whatever is
@@ -73,12 +72,12 @@ tournament = sic.Tournament(
 If you set the interactive flag to 'true' (cf., the subsection [2.3 Interactive mode](/quick-start/#23-interactive-mode) in the quick-start guide), you can follow the agent behavior in real time. Else you can check it afterwards by looking
 at the content of the 'deathmatch_results' folder.
 
-Use the available plots and the visualization to make the behavior more interesting. You can see how your agents stand up against others by joining the Swarm Intelligence Cup.
+You can use the available plots and the visualization to make the behavior more interesting and improve the agent's behavior. You can see how your agents stand up against others by joining the Swarm Intelligence Cup.
 
 ## 4. Submit it and participate in the cup
 
 You have an interesting behavior to show, or just want to see how your agents stack up against others? Take part in our 'Swarm Intelligence Cup'. Head over to our [Lab42 landing page](https://lab42.global/sic/) and then
 
-1. [Sign Up](https://lab42.global/sic-registration/)
-2. [Submit your Code](https://lab42.global/sic-submission/)
-3. Get to the top of the [Leaderboard](https://lab42.global/sic-leaderboard/)
+1. [Sign Up](https://lab42.global/sic/registration/)
+2. [Submit your Code](https://lab42.global/sic/submission/)
+3. Get to the top of the [Leaderboard](https://lab42.global/sic/leaderboard/)

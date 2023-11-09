@@ -53,7 +53,7 @@ The agent input contains the following:
 {'inventory_info': None, 'swarm_name': 'A', 'energy_level': 81, 'inbox': [], 'n_pheromone_symbols': 1, 'memory': {'prev_di': 0, 'prev_dj': -1, 'home_i': -1, 'home_j': 1, 'mode': 0}}
 ```
 
-- **relative_indices:** A list of relative \[x, y\] coordinates specifying the view-field of the agent. E.g., if the view-field is 1
+- **relative_indices:** A list of relative \[x, y\] coordinates specifying the view-field of the agent. E.g., if the view distance is 1 (and the view field is square ('manhatten'))
 
 ```json
 [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 0], [0, 1], [1, -1], [1, 0], [1, 1]]  
@@ -87,7 +87,8 @@ def main():
         json.dump(desired_actions, fp)
 ```
 
-For more details on the possible actions refer to the corresponding [page](/actions/). Important is that each agent only has a limited number of activity points at each time step which limits the number of possible actions the agent can do in one time step.  E.g., if the number of activity points is 2 and the list returned by the agent is the following:
+For more details on the possible actions refer to the corresponding [page](/actions/). Important is that each agent only has a limited number of activity points at each time step which limits the number of possible actions the agent can do in one time step.
+E.g., let the available number of activity points be 2 and the cost of each activity 1. Consider the following list being returned by the agent:
 
 ```json
 [[”pickup”, [0, -1]], [”step”, [2, 0]], [”putdown”, [0, -1]]]

@@ -8,8 +8,8 @@ There are several possible ways you can use the SIC simulation with increasing c
 
 1. [Use the Colab template](#1-use-the-colab-template) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lab42-global/sic42-template/blob/main/sic-template.ipynb) (free Google account required).
 2. [Use a local Python installation](#2-use-a-local-python-installation) and install the package via pip. (We recommend using a virtual environment).
-3. [Use a local Python installation with the source code.](#3-use-a-local-python-installation-with-the-source-code) Get it from our GitHub repository [change link!](https://github.com/lab42-global).
-4. [Use the development container](#4-use-the-development-container) together with VSCode found on our GitHub repository [change link!](https://github.com/lab42-global) to be as close as possible to our evaluation environment.
+3. [Use a local Python installation with the source code.](#3-use-a-local-python-installation-with-the-source-code) Get it from our [GitHub repository](https://github.com/lab42-global/sic42).
+4. [Use the development container](#4-use-the-development-container) together with VSCode found on our [GitHub repository](https://github.com/lab42-global/sic42) to be as close as possible to our evaluation environment.
 
 ## 1. Use the Colab Template
 
@@ -24,7 +24,7 @@ Note that there is one limitation due to how Colab works: For now there is no in
 
 ## 2. Use a local Python installation.
 
-We recommend that you use a virtual environment such as [Anaconda](https://docs.anaconda.com/free/anaconda/install/index.html) to manage the dependencies. Installing the sic42 package is then as simple as running
+We recommend that you use a virtual environment manager such as [Anaconda](https://docs.anaconda.com/free/anaconda/install/index.html) to manage the dependencies. Installing the sic42 package is then as simple as running
 
 ```bash
 pip install sic42
@@ -95,7 +95,7 @@ tournament = sic.Tournament(
         config_path='deathmatch_config.json',
         competitors_path='competitors'
     )
-    tournament.run_tournament()
+tournament.run_tournament()
 ```
 
 In this case we put the behavior scripts in the 'competitors' folder and specified the config file to use ('deathmatch_config.json') which is in our parent directory. Note that when running a tournament it will go through
@@ -104,18 +104,18 @@ against each other you can just duplicate the behavior script and give it a diff
 
 ### 2.3 Interactive mode
 
-The sic42 package comes with an interactive mode that let's you see in real time what your agents do and some basic stats about the swarms. To enable it change the entry called '"interactive"' (at the end of '"visualization"') from 'false' to 'true'.
+The sic42 package comes with an interactive mode that let's you see in real time what your agents do and some basic stats about the swarms. To enable it change the entry in the config file (e.g., 'deathmatch_config.json') called '"interactive"' (at the end of '"visualization"') from 'false' to 'true'.
 Running the tournament will then open a pygame window with a real time view on the simulation. You can pause it by pressing the space bar on your keyboard and hover with your mouse over an agent to get some basic information about it.
 
 ## 3. Use a local Python installation with the source code
 
-In case you wish to look at the underlying code of the sic42 package you can find it on our [GitHub repository change link!](https://github.com/lab42-global/). Everything is published under an Apache 2.0 license and we are happy to receive your feedback
+In case you wish to look at the underlying code of the sic42 package you can find it on our [GitHub repository](https://github.com/lab42-global/sic42). Everything is published under an Apache 2.0 license and we are happy to receive your feedback
 on how we can improve the code for the future.
 
 ## 4. Use the development container
 
 We would like to leave you as much freedom as possible when it comes to the behavior scripts in terms of allowed packages that are allowed for the competition. For now we will rely on the publicly available Kaggle [docker-python](https://github.com/Kaggle/docker-python) image,
-which contains many of the most used packages. You can test if your behavior script will run smoothly through our evaluation by using the .devcontainer folder found on our [GitHub repository change link!](https://github.com/lab42-global/). 
+which contains many of the most used packages. You can test if your behavior script will run smoothly through our evaluation by using the .devcontainer folder found on our [GitHub repository](https://github.com/lab42-global/sic42). 
 
 There are several things you need if you follow the suggested path:
 

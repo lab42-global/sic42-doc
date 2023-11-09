@@ -87,11 +87,11 @@ The value of the action is the relative position of the location of the item whi
 "itemmerge": [-2, 3]
 ```
 
-will make the agent merge the item in storage with the one at \[x-2, y+3\]. The newly created item will be stored in the inventory.
+will make the agent merge the item in storage with the item in the inventory of the agent at \[x-2, y+3\]. The newly created item will be stored in the inventory.
 
 ### 3. Information Handling
 
-- **infostorage:**: Write information into item.
+- **infostorage:** Write information into item.
 
 The value of the action consists of the relative position of the item into which the information should be written and the text to be written into the item. E.g.,
 
@@ -101,7 +101,7 @@ The value of the action consists of the relative position of the item into which
 
 will write the string "merge me with A!" into the item located at \[x-2, y+3\].
 
-- **memory:**: Store information into agents memory.
+- **memory:** Store information into agents memory.
 
 The value of the action is a dictionary that should be stored to the internal memory of the agent. E.g.,
 
@@ -111,7 +111,7 @@ The value of the action is a dictionary that should be stored to the internal me
 
 will write the dictionary with content {"coolitems": "A+B", "i": 1} into the internal memory which can be accessed again for example in the next simulation step.
 
-- **broadcast:**: Broadcast information to other agents.
+- **broadcast:** Broadcast information to other agents.
 
 The value of the action is a list of pairs \[relative position, message\], where the relative positions refer to the agents to which the content of the message should be communicated. E.g.,
 
@@ -153,11 +153,11 @@ The value of the action is the relative position of the item from which the upgr
 "upgrade":  [1, 1] 
 ```
 
-will let the agent consume the powerup in the item located at \[x+1, y+1\] (if there is one). Note that upgrades are permanent and will be passed to offsprings via reproduction.
+will let the agent consume the upgrade in the item located at \[x+1, y+1\] (if there is one). Note that upgrades are permanent and will be passed to offsprings via reproduction.
 
 ## 6. Combining actions
 
-If allowed in a game, all of the above actions can be combined for a single step. Say the number of available activity points is 2, then the simulation will execute the first 2 requested actions in the list returned by the agent. E.g., if the number of activity points is 2 and the list returned by the agent is the following:
+If allowed in a game, all of the above actions can be combined for a single step. Say the number of available activity points is 2, and the number of points needed per activity is 1, then the simulation will execute the first 2 requested actions in the list returned by the agent. E.g., if the number of activity points is 2 and the list returned by the agent is the following:
 
 ```json
 [[”pickup”, [0, -1]], [”step”, [2, 0]], [”putdown”, [0, -1]]]
