@@ -9,7 +9,7 @@ We will add some interesting sample behaviors at a later stage. If you think you
 1. [Eater](#1-eater)
 2. [Reproducer](#2-reproducer)
 
-Note that for both of them you will need some helper functions which we have in our 'maths_utils.py'. You can find the file on our repo or in the [Appendix](#a-some-helper-files).
+Note that for both of them you will need some helper functions which we have in our 'maths_utils.py'. You can find the file on our repo or in the [Appendix](#a-math-utils-file).
 
 ## 1. Eater
 
@@ -147,7 +147,7 @@ def main():
         json.dump(desired_actions, fp)
 ```
 
-## A. Some helper files
+## A. Math Utils File
 
 ```python
 from itertools import product

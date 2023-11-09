@@ -6,9 +6,9 @@ permalink: /simulation/
 
 The simulation environment is created based on the [configuration](/configuration/) file. In there it is specified how the environment is populated with agents and items and what there properties are. We will call the combination of agents and environments at a given time "board".
 
-The simulation is divided into simulation steps in which every agent gets its turn to execute actions.
+The simulation is divided into [simulation steps](#1-simulation-step) in which every agent gets its turn to [execute actions](#2-agent-actions).
 
-## Simulation Step
+## 1. Simulation Step
 
 For every simulation there is a maximum number of time steps where each of these steps consists of the following:
 
@@ -20,13 +20,32 @@ For every simulation there is a maximum number of time steps where each of these
 3. The items are updated. E.g., the energy level of items may grow or items may be spawned.
 4. Pheromones loose intensity according to their decay function.
 
-## Agent Input and Output
+## 2. Agent Actions
 
-As described before in every simulation step the behavior module receives an "agent_input" and has to generate a corresponding "agent_output" containing the actions the agent should execute.
+As described before in every simulation step the behavior module receives an ["agent_input.json"](#21-agent-input) and has to generate a corresponding ["agent_output.json"](#22-agent-output) containing the actions the agent should execute.
 
-### Agent Input
+### 2.1 Agent Input
 
-At each time step each agent receives the state of the current board (c.f., step 2.i. above). The agent input contains the following:
+At each time step each agent receives the state of the current board (c.f., step 2.i. above) in form of a file called "agent_input.json" that it can read. You can use the following minimal example of a Python script as a template to read from the file:
+
+```python
+import json
+def from_json(path='agent_input.json'):
+    with open(path, 'r') as fp:
+        json_obj = json.load(fp)
+    return (
+        json_obj['self_view'],
+        np.array(json_obj['relative_indices']),
+        np.array(json_obj['entities']),
+        np.array(json_obj['pheromones'], dtype='object')
+    )
+
+def main():
+    # Read the agent input at every time step
+    self_view, indices, entities, pheromones = from_json()
+```
+
+The agent input contains the following:
 
 - **self_view:** Information about the current state of the agent. E.g.,
 
@@ -34,7 +53,7 @@ At each time step each agent receives the state of the current board (c.f., step
 {'inventory_info': None, 'swarm_name': 'A', 'energy_level': 81, 'inbox': [], 'n_pheromone_symbols': 1, 'memory': {'prev_di': 0, 'prev_dj': -1, 'home_i': -1, 'home_j': 1, 'mode': 0}}
 ```
 
-- **indices:** A list of relative \[x, y\] coordinates specifying the view-field of the agent. E.g., if the view-field is 1
+- **relative_indices:** A list of relative \[x, y\] coordinates specifying the view-field of the agent. E.g., if the view-field is 1
 
 ```json
 [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 0], [0, 1], [1, -1], [1, 0], [1, 1]]  
@@ -52,9 +71,23 @@ At each time step each agent receives the state of the current board (c.f., step
 [[1], [], [], [], [], [], [], [], [1, 2]]  
 ```
 
-### Agent Output
+### 2.2 Agent Output
 
-The agent output is a list of actions the agent wants to execute and should be returned by the agent behavior module. For more details on the possible actions refer to the corresponding [page](/actions/). Important is that each agent only has a limited number of activity points at each time step which limits the number of possible actions the agent can do in one time step.  E.g., if the number of activity points is 2 and the list returned by the agent is the following:
+The agent output is a list of actions the agent wants to execute and should be returned by the agent behavior module. The agent behavior module should write its output into a file called 'agent_output.json'. A minimal example would be:
+
+```python
+import json
+
+def main():
+    # Create some sample desired actions
+    desired_actions = [[”pickup”, [0, -1]], [”step”, [2, 0]], [”putdown”, [0, -1]]]
+
+    # Write them to the agent output file
+    with open('agent_output.json', 'w') as fp:
+        json.dump(desired_actions, fp)
+```
+
+For more details on the possible actions refer to the corresponding [page](/actions/). Important is that each agent only has a limited number of activity points at each time step which limits the number of possible actions the agent can do in one time step.  E.g., if the number of activity points is 2 and the list returned by the agent is the following:
 
 ```json
 [[”pickup”, [0, -1]], [”step”, [2, 0]], [”putdown”, [0, -1]]]

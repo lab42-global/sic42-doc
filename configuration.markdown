@@ -6,16 +6,22 @@ permalink: /configuration/
 
 The configuration of a tournament can be specified in a JSON file. In the following we will not go through all the options and keep it high level, as in general you do not need to change the configuration file if your only intent is to take part in the SIC. However, if you wish to know all the details and make configuration files yourself please consult the technical documentation.
 
-There are five categories into which we group the configuration, tournament, simulation, environment, agents, and visualization.
+There are five categories into which we group the configuration: 
 
-## Tournament
+1. [Tournament](#1-tournament)
+2. [Simulation](#2-simulation)
+3. [Environment](#3-environment)
+4. [Agents](#4-agents)
+5. [Visualization](#5-visualization)
+
+## 1. Tournament
 
 The mode of the tournament is explained in more detail on another [page](/tournament/). The important configurations are:
 
 - **Goal Function:** The goal function specifies how the scores are calculated. A successful swarm maximizes it.
 - **Tournament details:** It can be specified how many rounds a tournament consists of, how many sets and how many swarms there are per game.
 
-## Simulation
+## 2. Simulation
 
 Aside from the number of time steps the simulation runs and when it will stop the important thing is the time constraint per swarm:
 
@@ -25,7 +31,7 @@ Aside from the number of time steps the simulation runs and when it will stop th
 available runtime = (time multiplier)*(nr of agents)*(total nr of time steps)
 ```
 
-## Environment
+## 3. Environment
 
 - **Size:** The size of the environment may vary and can be specified as well as the symbol that should be taken for the background.
 - **Swarms:** The number of agents per swarm that are initially spawned can be specified. Furthermore, it is possible to restrict the spawning of the swarm's agent to certain subregions, e.g., a disc or quadrant of the whole environment.
@@ -37,7 +43,7 @@ available runtime = (time multiplier)*(nr of agents)*(total nr of time steps)
   - **Powerup:** What kind of powerup the item contains, how strong it is, how long it is effective and how likely it is that the item spawns with it.
   - **Upgrade:** What kind of upgrade the item contains, how strong it is and how likely it is that the item spawns with it.
 
-## Agents
+## 4. Agents
 
 The parameter describing the initial configuration of a single agent can be set. They include:
 
@@ -50,6 +56,6 @@ The parameter describing the initial configuration of a single agent can be set.
 - **Pheromone Actions:** The number of different pheromones an agent can place as well as how intense they are when placed and how much they decay.
 - **Upgrade/Powerup Actions:** The maximum number of upgrades and powerups an agent can apply.
 
-## Visualization
+## 5. Visualization
 
 It is possible to specify if a video should be generated, if you want to be in interactive mode and observe the swarms live using pygame, if you wish to save plots and logs.

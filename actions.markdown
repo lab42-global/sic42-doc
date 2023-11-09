@@ -8,15 +8,15 @@ Actions are what describe your agent behavior and you will let your Python scrip
 
 ### Basic Survival Actions
 
-- **move:** Move an agent from one cell to another.  
+- **step:** Make an agent step from one cell to another.  
 
-The value of the action is the location of the cell to move to. E.g.,
+The value of the action is the location of the cell to step to. E.g.,
 
 ```json
-"move": [-3, 4]
+"step": [-3, 4]
 ```
 
-will make the agent move to \[x-3, y+4\].
+will make the agent step to \[x-3, y+4\].
 
 - **eat:** Increase energy level of agent by eating an item that contains energy.
 
@@ -154,4 +154,4 @@ If allowed in a game, all of the above actions can be combined for a single step
 [[”pickup”, [0, -1]], [”step”, [2, 0]], [”putdown”, [0, -1]]]
 ```
 
-The agent will pickup the item located at \[x, y-1\] and then move to the cell at \[x+2, 0\], provided there is an item at the location and the storage is not full and the cell at \[x+2, 0\] is empty. The "putdown" action will never be executed as the number of activity points is too low even if "pickup" and/or "step" fails.
+The agent will pickup the item located at \[x, y-1\] and then step to the cell at \[x+2, 0\], provided there is an item at the location and the storage is not full and the cell at \[x+2, 0\] is empty. The "putdown" action will never be executed as the number of activity points is too low even if "pickup" and/or "step" fails.

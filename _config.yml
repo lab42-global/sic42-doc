@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: SIC Documentation
+title: sic42 Documentation
 email: swarm@lab42.global
 website: https://lab42.global
 description: >- # this means to ignore newlines until "baseurl:"
@@ -26,7 +26,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sic42.lab42.global"
 baseurl: ""
-linkedin_username: lab42-global
+# linkedin_username: lab42-global
 github_username:  lab42-global
 
 # Build settings
@@ -41,6 +41,7 @@ plugins:
 
 header_pages:
   - quick-start.markdown
+  - behavior-script.markdown
   - installation.markdown
   - configuration.markdown
   - simulation.markdown

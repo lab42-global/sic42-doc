@@ -85,7 +85,7 @@ conda install -c conda-forge --yes ffmpeg
 Once you've installed and tested the package successfully you can start adding your own behavior scripts and if you like also change the configuration script. For that you should create a folder into which you want to put
 the behavior scripts (and only those), e.g. called "competitors" in your working directory. You can also create another folder for the configuration script or keep it in the parent directory. Once you've done that add at
 least two behavior scripts and a configuration file. If you wish to use the examples that come with the package it's easiest to find them on our [GitHub repository](https://github.com/lab42-global/sic42-template) for the Colab template. Make sure that you also copy the 'math_utils.py'
-file you will find there into your parent directory as the two sample behavior scripts rely on that.
+file you will find there into your parent directory as the two sample behavior scripts rely on that. You can also find the behaviors and the helper file in the [examples](/examples/) section.
 
 You can then test if everything works by specifying the paths to the behavior scripts and the configuration file when running the tournament:
 

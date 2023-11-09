@@ -3,10 +3,15 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+title: Welcome to the sic42 Documentation!
 ---
 
-# Welcome to the SIC documentation
+This is the documentation for the sic42 package. It is a work in progress and will be expanded as the beta phase runs. You can help us improve it by submitting pull requests on our [GitHub repository](https://github.com/michaelhodel/sic "SIC Documentation").
 
-This is the documentation for the SIC project. It is a work in progress and will be expanded as the beta phase runs. You can help us improve it by submitting pull requests on our [GitHub repository](https://github.com/michaelhodel/sic "SIC Documentation").
+## How to get started
 
-## About SIC
+To get started with the sic42 package head over to our [quick start](/quick-start/) section. If you'd like to learn more about the Swarm Intelligence Cup (SIC) you can go to our [website](https://lab42.global/sic/).
+
+## About the Swarm Intelligence Cup
+
+Rolf? ;)
