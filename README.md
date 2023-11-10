@@ -5,6 +5,14 @@
 This repository hosts the official documentation for the [sic42 package](https://github.com/lab42-global/sic42), a simulation environment for swarms. Here, you'll find everything to get you started and create
 your own agent behavior script to participate in the [Swarm Intelligence Cup](https://lab42.global/sic/)
 
+## Known Bugs
+
+- The ipython package is missing as a requirement. Until we update the package please install it manually e.g. using
+
+  ```bash
+  pip install ipython
+  ```
+
 ## Documentation Features
 
 - **Quick Start:** Step-by-step instructions to get you started with sic42.
