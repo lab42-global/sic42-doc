@@ -48,6 +48,7 @@ header_pages:
   - tournament.markdown
   - actions.markdown
   - examples.markdown
+  - faq.markdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.

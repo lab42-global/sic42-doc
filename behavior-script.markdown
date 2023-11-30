@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Behavior Script
+title: Behavior
 permalink: /behavior-script/
 ---
 
